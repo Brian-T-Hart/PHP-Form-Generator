@@ -9,12 +9,6 @@ form {
     border: 1px solid #ccc;
 }
 
-label {
-    display: block;
-    letter-spacing: 0.05em;
-    padding-bottom: 0.25em;
-}
-
 input {
     border: 1px solid #ccc;
     font-size: 1.2em;
@@ -34,6 +28,16 @@ input[type=submit]:hover {
     background-color: #dedede;
 }
 
+label {
+    display: block;
+    letter-spacing: 0.05em;
+    padding-bottom: 0.25em;
+}
+
+select {
+    font-size: 1em;
+}
+
 .description {
     font-weight: 200;
     font-style: italic;
@@ -41,6 +45,10 @@ input[type=submit]:hover {
 
 .field-wrapper {
     margin-bottom: 1.5em;
+}
+
+.form-title {
+    margin-top: 0
 }
 
 .radio-label {
