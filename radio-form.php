@@ -26,7 +26,7 @@ foreach($form->getFields() as $field) {
     echo $field->getField();
 }
 
-echo $form->getSubmitBtn('Log In');
+echo $form->getSubmitBtn();
 echo $form->getEndTag();
 
 include('includes/footer.php');

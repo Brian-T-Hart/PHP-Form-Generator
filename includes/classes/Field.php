@@ -36,6 +36,7 @@ class Field {
         $html = "<input";
         $html .= " type=\"$this->type\"";
         $html .= " name=\"$this->name\"";
+        $html .= " id=\"$this->id\"";
         $html .= ">";
         return $html;
     }

@@ -41,7 +41,7 @@ class Form {
     }
 
     public function getTitle() {
-        return "<h2>$this->name</h2>";
+        return "<h2 class=\"form-title\">$this->name</h2>";
     }
 
     public function getSubmitBtn($value = 'Submit') {
