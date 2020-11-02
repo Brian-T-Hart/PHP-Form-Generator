@@ -45,7 +45,7 @@ class Form {
     }
 
     public function getSubmitBtn($value = 'Submit') {
-        return "<input type=\"submit\" value=\"$value\"/>";
+        return "<input name=\"submit\" type=\"submit\" value=\"$value\"/>";
     }
 
     public function setName($name = null) {
