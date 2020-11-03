@@ -3,15 +3,15 @@
 class Form {
     public $action;
     public $fields;
-    public $id;
+    public $slug;
     public $method;
     public $name;
     
-    public function __construct($action, $method, $name, $id, array $fields = null) {
+    public function __construct($action, $method, $name, $slug, array $fields = null) {
         $this->action = $action;
         $this->method = $method;
         $this->name = $name;
-        $this->id = $id;
+        $this->slug = $slug;
         if ($fields) {
             $this->fields = $fields;
         }
@@ -22,8 +22,8 @@ class Form {
             <form
                 action=\"$this->action\"
                 method=\"$this->method\"
-                name=\"$this->name\" 
-                id=\"$this->id\"
+                name=\"$this->slug\" 
+                id=\"$this->slug\"
             >
         ";
     }
@@ -66,8 +66,8 @@ class Form {
         }
     }
 
-    public function setId($id) {
-        $this->id = $id;
+    public function setId($slug) {
+        $this->slug = $slug;
     }
 
 }
