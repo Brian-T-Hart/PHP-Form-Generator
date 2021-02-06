@@ -15,8 +15,14 @@ $description = 'Choose your favorite animal';
 // create field instances
 $fields[] = new RadioField($name, $id, $options, $description);
 
+$formAttr = [
+    "action" => "https://postman-echo.com/post",
+    "method" => "POST",
+    "target" => "_blank",
+];
+
 // create form instance
-$form = new Form('https://postman-echo.com/post', 'POST', 'Favorite Animal', 'favorite-animal-form', $fields);
+$form = new Form('favorite-animal-form', 'Favorite Animal', $formAttr, $fields);
 
 // output form
 echo $form->getStartTag();

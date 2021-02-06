@@ -9,8 +9,16 @@ include('includes/header.php');
 $fields[] = new Field('email', 'email', 'email', 'enter your email address');
 $fields[] = new Field('password', 'password', 'password', 'enter your password');
 
+$formAttr = [
+    "action" => "https://postman-echo.com/post",
+    "method" => "POST",
+    "name" => "Login",
+    "target" => "_blank",
+];
+
 // create form instance
-$form = new Form('https://postman-echo.com/post', 'POST', 'Login', 'login-form', $fields);
+$form = new Form('login-form', 'Login', $formAttr, $fields);
+
 
 // output form
 echo $form->getStartTag();
