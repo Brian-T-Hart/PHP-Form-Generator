@@ -1,31 +1,33 @@
 <?php
 
 class Form {
-    public $action;
+    public $attr;
     public $fields;
-    public $slug;
-    public $method;
+    public $id;
     public $name;
     
-    public function __construct($action, $method, $name, $slug, array $fields = null) {
-        $this->action = $action;
-        $this->method = $method;
+    public function __construct($id, $name, array $attr = null, array $fields = null) {
+        $this->id = $id;
         $this->name = $name;
-        $this->slug = $slug;
+
+        if ($attr) {
+            $this->attr = $attr;
+        }
         if ($fields) {
             $this->fields = $fields;
         }
     }
 
     public function getStartTag() {
-        return "
-            <form
-                action=\"$this->action\"
-                method=\"$this->method\"
-                name=\"$this->slug\" 
-                id=\"$this->slug\"
-            >
-        ";
+        $html = "<form id=\"$this->id\"";
+
+        foreach($this->attr as $key => $value) {
+            $html .= " $key=\"$value\"";
+        }
+
+        $html .= '>';
+
+        return $html;
     }
 
     public function getEndTag() {
@@ -48,14 +50,6 @@ class Form {
         return "<input name=\"submit\" type=\"submit\" value=\"$value\"/>";
     }
 
-    public function setName($name = null) {
-        if ($name) {
-            $this->name = $name;
-        }else {
-            $this->name = self::NAME;
-        }
-    }
-
     public function set($property, $value = null) {
         $this->$property = $value;
     }
@@ -64,10 +58,6 @@ class Form {
         foreach($attribs as $key => $value) {
             $this->$key = $value;
         }
-    }
-
-    public function setId($slug) {
-        $this->slug = $slug;
     }
 
 }
